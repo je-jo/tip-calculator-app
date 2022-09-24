@@ -7,38 +7,29 @@ The designs were created to the following widths:
 - Mobile: 375px
 - Desktop: 1440px
 
-## Colors
-
-### Primary
-
-- Strong cyan: hsl(172, 67%, 45%)
-
-### Neutral
-
-- Very dark cyan: hsl(183, 100%, 15%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Grayish cyan: hsl(184, 14%, 56%)
-- Light grayish cyan: hsl(185, 41%, 84%)
-- Very light grayish cyan: hsl(189, 41%, 97%)
-- White: hsl(0, 0%, 100%)
-
 ## Typography
 
 ### Body Copy
 
-- Font size (form inputs): 24px
+- Font size (form inputs): 24px */
 
-### Font
 
-- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
-- Weights: 700 */
-
-/*reset*/
 
 .output {
     color: red;
     font-size: large;
 }
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+}
+
+/*---*/
+
+/*reset*/
 
 *,
 *::before,
@@ -93,10 +84,21 @@ select {
 /*theme*/
 
 :root {
-    --clr-dark: #222;
-    --clr-white: #f9f9f9;
-    --clr-primary: #EF6155;
-    --clr-primary-strong: #f13422;
+    --clr-dark: hsl(172, 67%, 45%);
+    /*Strong cyan*/
+    --clr-light: hsl(189, 41%, 97%);
+    /*very light grayish cyan*/
+    --clr-light2: hsl(185, 41%, 84%);
+    /*light grayish cyan*/
+    --clr-primary: hsl(186, 14%, 43%);
+    /*Dark grayish cyan*/
+    --clr-primary-strong: hsl(183, 100%, 15%);
+    /*Very dark cyan*/
+    --clr-gray: hsl(184, 14%, 56%);
+    /*Grayish cyan*/
+    --clr-white: hsl(0, 0%, 100%);
+    /*White*/
+    --clr: hsl(173, 61%, 77%);
     --fs-h1: 4.2rem;
     --fs-h2: 3.15rem;
     --fs-h3: 2rem;
@@ -119,12 +121,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: sans-serif;
+    font-family: 'Space Mono', monospace;
     font-size: 100%;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    background-color: var(--clr-white);
-    color: var(--clr-dark);
+    background-color: var(--clr-light2);
+    color: var(--clr-primary);
 }
 
 header {
@@ -132,16 +134,18 @@ header {
     padding: 1em;
     place-self: center;
     text-align: center;
-    border-bottom: 1px solid currentColor;
 }
 
 main {
     width: min(100%, 90ch);
     margin: 0 auto;
     padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
 }
 
-main > * {
+main>* {
     margin-top: 1em;
 }
 
@@ -173,6 +177,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
     padding: 1em;
     gap: 1em;
+    background-color: var(--clr-white);
 }
 
 .container--flex {
@@ -182,40 +187,11 @@ footer {
     gap: 1em;
 }
 
-.container--flex > * {
+.container--flex>* {
     flex: 1 1 var(--min-col-width);
 }
 
-
-
 /*typography */
-
-h2,
-h3,
-h4 {
-    font-weight: bold;
-    line-height: 1.15;
-    margin-bottom: 0.65em;
-}
-
-h1 {
-    font-size: var(--fs-h1);
-    font-size: min(max(3rem, 5vw), var(--fs-h1));
-    text-align: center;
-}
-
-h2 {
-    font-size: var(--fs-h2);
-    font-size: min(max(2.5rem, 4.5vw), var(--fs-h2));
-}
-
-h3 {
-    font-size: var(--fs-h3);
-}
-
-h4 {
-    font-size: var(--fs-h4);
-}
 
 p,
 li {
@@ -225,14 +201,6 @@ li {
 main p {
     margin: 0 0 1rem;
     max-width: 80ch;
-}
-
-*+h2 {
-    margin-top: 4rem;
-}
-
-*+h3 {
-    margin-top: 2rem;
 }
 
 a:not(.btn) {
@@ -260,8 +228,8 @@ a:not(.btn):hover {
     transition: var(transition);
     border: 2px solid currentColor;
     border-radius: var(--border-radius);
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
+    background-color: var(--clr-primary-strong);
+    color: var(--clr-light);
     font-size: 1.125rem;
     line-height: 1.1;
     text-align: center;
@@ -270,17 +238,18 @@ a:not(.btn):hover {
 }
 
 .btn--alt {
-    background-color: var(--clr-white);
+    background-color: var(--clr-light);
     color: var(--clr-primary);
 }
 
 .btn:hover {
-    background-color: var(--clr-primary-strong)
+    background-color: #9fe8df;
+    color: var(--clr-primary-strong);
 }
 
 .btn--alt:hover {
     background-color: var(--clr-primary);
-    color: var(--clr-white);
+    color: var(--clr-light);
 }
 
 /*card*/
@@ -289,9 +258,12 @@ a:not(.btn):hover {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 2em;
     gap: 2em;
     border-radius: var(--border-radius);
     background-color: #fff;
     box-shadow: var(--box-shadow);
+}
+
+.card:nth-child(2) {
+    background-color: var(--clr-primary-strong);
 }
