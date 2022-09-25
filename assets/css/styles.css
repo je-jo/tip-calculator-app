@@ -15,17 +15,9 @@ The designs were created to the following widths:
 
 
 
-.output {
-    color: red;
-    font-size: large;
-}
 
-input[type="radio"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    margin: 0;
-}
+
+
 
 /*---*/
 
@@ -40,7 +32,7 @@ input[type="radio"] {
 * {
     margin: 0;
     padding: 0;
-    outline: 1px solid salmon;
+    /* outline: 1px solid salmon; */
 }
 
 :focus {
@@ -84,20 +76,13 @@ select {
 /*theme*/
 
 :root {
-    --clr-dark: hsl(172, 67%, 45%);
-    /*Strong cyan*/
-    --clr-light: hsl(189, 41%, 97%);
-    /*very light grayish cyan*/
-    --clr-light2: hsl(185, 41%, 84%);
-    /*light grayish cyan*/
-    --clr-primary: hsl(186, 14%, 43%);
-    /*Dark grayish cyan*/
-    --clr-primary-strong: hsl(183, 100%, 15%);
-    /*Very dark cyan*/
-    --clr-gray: hsl(184, 14%, 56%);
-    /*Grayish cyan*/
+    --clr-strong-cyan: hsl(172, 67%, 45%);
+    --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --clr-light-grayish-cyan: hsl(185, 41%, 84%);
+    --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
+    --clr-very-dark-cyan: hsl(183, 100%, 15%);
+    --clr-grayish-cyan: hsl(184, 14%, 56%);
     --clr-white: hsl(0, 0%, 100%);
-    /*White*/
     --clr: hsl(173, 61%, 77%);
     --fs-h1: 4.2rem;
     --fs-h2: 3.15rem;
@@ -105,7 +90,8 @@ select {
     --fs-h4: 1.35rem;
     --fs-text: 1.15rem;
     --fs-lead: 1.35rem;
-    --border-radius: 8px;
+    --fs-small: 0.75rem;
+    --border-radius: 12px;
     --spacing-s: 1rem;
     --spacing-m: 3rem;
     --spacing-l: 6rem;
@@ -122,32 +108,37 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Space Mono', monospace;
+    font-weight: 700;
     font-size: 100%;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    background-color: var(--clr-light2);
-    color: var(--clr-primary);
+    background-color: var(--clr-light-grayish-cyan);
 }
 
 header {
     width: 100%;
-    padding: 1em;
     place-self: center;
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    margin: 0 auto;
 }
 
 main {
     width: min(100%, 90ch);
     margin: 0 auto;
-    padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
-    flex-grow: 1;
+    flex-grow: 2;
     display: grid;
-    place-items: center;
+    place-items: start;
 }
 
-main>* {
+/* main>* {
     margin-top: 1em;
-}
+} */
 
 footer {
     width: 100%;
@@ -155,7 +146,6 @@ footer {
     padding: 0.5em;
     place-self: center;
     text-align: center;
-    border-top: 1px solid currentColor;
 }
 
 /*utilities*/
@@ -175,9 +165,10 @@ footer {
 .container--grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
-    padding: 1em;
+    padding: 2em;
     gap: 1em;
     background-color: var(--clr-white);
+    border-radius: var(--border-radius);
 }
 
 .container--flex {
@@ -203,16 +194,34 @@ main p {
     max-width: 80ch;
 }
 
+footer p {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-small);
+}
+
 a:not(.btn) {
-    color: var(--clr-primary);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:not(.btn):hover {
-    color: var(--clr-primary-strong);
     text-decoration: underline;
     text-underline-offset: 0.2rem;
+}
+
+.output {
+    color: red;
+    font-size: large;
+}
+
+/*input*/
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
 }
 
 /*buttons*/
@@ -228,8 +237,6 @@ a:not(.btn):hover {
     transition: var(transition);
     border: 2px solid currentColor;
     border-radius: var(--border-radius);
-    background-color: var(--clr-primary-strong);
-    color: var(--clr-light);
     font-size: 1.125rem;
     line-height: 1.1;
     text-align: center;
@@ -237,20 +244,11 @@ a:not(.btn):hover {
     cursor: pointer;
 }
 
-.btn--alt {
-    background-color: var(--clr-light);
-    color: var(--clr-primary);
-}
+.btn--alt {}
 
-.btn:hover {
-    background-color: #9fe8df;
-    color: var(--clr-primary-strong);
-}
+.btn:hover {}
 
-.btn--alt:hover {
-    background-color: var(--clr-primary);
-    color: var(--clr-light);
-}
+.btn--alt:hover {}
 
 /*card*/
 
@@ -260,10 +258,8 @@ a:not(.btn):hover {
     width: 100%;
     gap: 2em;
     border-radius: var(--border-radius);
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
 }
 
 .card:nth-child(2) {
-    background-color: var(--clr-primary-strong);
+    background-color: var(--clr-very-dark-cyan);    
 }
