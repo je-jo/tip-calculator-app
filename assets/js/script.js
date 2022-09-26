@@ -1,6 +1,6 @@
-let bill = 0;
-let percent = 0;
-let numberOfPersons = 1;
+let bill;
+let percent;
+let numberOfPersons;
 
 //main functions
 
@@ -20,11 +20,8 @@ function updateBillValue(e) {
 const inputPercent = [...document.querySelectorAll('input[name="percentage"]')];
 for (let i = 0; i < inputPercent.length; i++) {
     inputPercent[i].addEventListener("input", (e) => {
-        if (e.currentTarget.getAttribute("id") == "custom") {
-            percent = e.currentTarget.value / 100;
-        } else {
-            percent = e.currentTarget.value;
-        }
+        percent = e.currentTarget.value / 100;
+        console.log(percent)
         updateDisplay();
     });
 }
@@ -54,13 +51,22 @@ function updateDisplay() {
     displayTotalBill.textContent = formatPrice(calculateTotalBillPerPerson());
 }
 
-const buttonClear = document.getElementById("clear");
 const form = document.querySelector("form");
+const buttonClear = document.getElementById("clear");
+
+form.addEventListener("input", () => {
+    buttonClear.removeAttribute("disabled");
+})
+
+
 function clearAll() {
     bill = 0;
     percent = 0;
     numberOfPersons = 1;
     form.reset();
+    buttonClear.setAttribute("disabled", true);
     updateDisplay();
 }
 buttonClear.addEventListener("click", clearAll);
+
+clearAll();
