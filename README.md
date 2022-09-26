@@ -18,8 +18,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Description
 
-//The challenge
-
 Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
@@ -27,6 +25,8 @@ Users should be able to:
 - Calculate the correct tip and total cost of the bill per person
 
 Updates live as values are entered. Number of persons is assumed to be 1, unless other number is entered.
+
+Reset button is disabled until at least one value is entered.
 
 ### Screenshot
 
@@ -51,6 +51,7 @@ Updates live as values are entered. Number of persons is assumed to be 1, unless
 ### Observations
 
 - radio buttons masked as buttons
+- radio buttons focus?
 
 
 ### Useful resources
