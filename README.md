@@ -20,11 +20,11 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
+[x] View the optimal layout for the app depending on their device's screen size
+[x] See hover states for all interactive elements on the page
+[x] Calculate the correct tip and total cost of the bill per person
 
-Updates live as values are entered. Number of persons is assumed to be 1, unless other number is entered.
+The results are updated live, as values are entered. Number of persons is assumed to be 1, unless other number is entered.
 
 Reset button is disabled until at least one value is entered.
 
@@ -50,9 +50,7 @@ Reset button is disabled until at least one value is entered.
 
 ### Observations
 
-- radio buttons masked as buttons
-- radio buttons focus?
-
+This was a fun challenge! The percentage "buttons" are actually hidden radio buttons, with their labels styled as buttons. I've tried to keep it accessible.
 
 ### Useful resources
 
@@ -60,8 +58,6 @@ Reset button is disabled until at least one value is entered.
 - [Custom CSS Styles for Form Inputs and Textareas](https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/)
 - [Pure CSS Custom Styled Radio Buttons](https://moderncss.dev/pure-css-custom-styled-radio-buttons/)
 - [Customize Radio Button Appearance with CSS](https://markheath.net/post/customize-radio-button-css)
-
-
 
 ## Author
 

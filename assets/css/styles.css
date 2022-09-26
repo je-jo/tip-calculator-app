@@ -11,7 +11,9 @@
     padding: 0;
 }
 
-:focus {
+:focus,
+label:focus-within,
+input[type="number"]:hover {
     outline: 2px solid var(--clr-strong-cyan);
     outline-offset: 2px;
     transition: var(--transition);
@@ -89,7 +91,7 @@ header {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 
 header>img {
@@ -198,16 +200,20 @@ input[type="number"] {
     color: var(--clr-very-dark-cyan);
 }
 
-#custom-number {
+input[type="number"]#bill {
+    background: url(../images/icon-dollar.svg) var(--clr-very-light-grayish-cyan) no-repeat left 0.8em center;
+}
+
+input[type="number"]#custom-number {
     height: 100%;
     margin: 0;
 }
 
-#bill {
-    background: url(../images/icon-dollar.svg) var(--clr-very-light-grayish-cyan) no-repeat left 0.8em center;
+input[type="number"]#custom-number:focus { /*gets outline with label:focus-within*/
+    outline: none;
 }
 
-#people {
+input[type="number"]#people {
     background: url(../images/icon-person.svg) var(--clr-very-light-grayish-cyan) no-repeat left 0.8em center;
 }
 
@@ -235,7 +241,7 @@ input[type="radio"] {
     margin: 0;
 }
 
-input[type="radio"]:focus {
+input[type="radio"]:focus { /*gets outline with label:focus-within*/
     outline: none;
 }
 
