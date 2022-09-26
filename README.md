@@ -1,6 +1,6 @@
-# README - Basic Template
+# Frontend Mentor - Tip calculator app solution
 
-A basic folder structure for simple front-end projects, with minimal styling provided.
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -8,7 +8,7 @@ A basic folder structure for simple front-end projects, with minimal styling pro
   - [Description](#description)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [The process](#the-process)
+- [My process](#my-process)
   - [Built with](#built-with)
   - [Observations](#observations)
   - [Useful resources](#useful-resources)
@@ -18,7 +18,15 @@ A basic folder structure for simple front-end projects, with minimal styling pro
 
 ### Description
 
-This is a a basic folder structure for simple front-end projects. Includes minimal styling for most used elements. Custom properties and general idea mostly taken from [Stephanie Eckless](https://moderncss.dev/).
+//The challenge
+
+Users should be able to:
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Calculate the correct tip and total cost of the bill per person
+
+Updates live as values are entered. Number of persons is assumed to be 1, unless other number is entered.
 
 ### Screenshot
 
@@ -26,8 +34,8 @@ This is a a basic folder structure for simple front-end projects. Includes minim
 
 ### Links
 
-- [Repo](https://github.com/je-jo/basic-template)
-- [Live Site](https://je-jo.github.io/basic-template/)
+- [FEM Solution](...)
+- [Live Site URL](https://je-jo.github.io/tip-calculator-app/)
 
 ## My process
 
@@ -38,17 +46,21 @@ This is a a basic folder structure for simple front-end projects. Includes minim
 - CSS Grid
 - Flexbox
 - Mobile-first workflow
+- JavaScript
 
 ### Observations
 
-This template should make building simple responsive pages quicker.
+- radio buttons masked as buttons
 
 
 ### Useful resources
 
-- [HTML / Sass Jumpstart](https://github.com/5t3ph/html-sass-jumpstart) - Inspired by Stephanie Eckless' HTML / Sass Jumpstart, but much simpler;
-- [Solutions to Replace the 12-Column Grid](https://moderncss.dev/solutions-to-replace-the-12-column-grid/);
-- [Colors from Paraiso theme](https://github.com/idleberg/Paraiso-Color-Palettes);
+- [My Basic Template](https://github.com/je-jo/basic-template) pretty much based on Stephanie Eckless' [HTML / Sass Jumpstart](https://github.com/5t3ph/html-sass-jumpstart) but much simpler;
+- [Custom CSS Styles for Form Inputs and Textareas](https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/)
+- [Pure CSS Custom Styled Radio Buttons](https://moderncss.dev/pure-css-custom-styled-radio-buttons/)
+- [Customize Radio Button Appearance with CSS](https://markheath.net/post/customize-radio-button-css)
+
+
 
 ## Author
 
