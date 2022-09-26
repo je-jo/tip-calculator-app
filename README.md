@@ -20,9 +20,9 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 Users should be able to:
 
-[x] View the optimal layout for the app depending on their device's screen size
-[x] See hover states for all interactive elements on the page
-[x] Calculate the correct tip and total cost of the bill per person
+- [x] View the optimal layout for the app depending on their device's screen size
+- [x] See hover states for all interactive elements on the page
+- [x] Calculate the correct tip and total cost of the bill per person
 
 The results are updated live, as values are entered. Number of persons is assumed to be 1, unless other number is entered.
 
@@ -34,7 +34,7 @@ Reset button is disabled until at least one value is entered.
 
 ### Links
 
-- [FEM Solution](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX/hub/tip-calculator-app-with-hidden-radio-buttons-RAMyBR33ku)
+- [FEM Solution](https://www.frontendmentor.io/solutions/tip-calculator-app-with-hidden-radio-buttons-RAMyBR33ku)
 - [Live Site URL](https://je-jo.github.io/tip-calculator-app/)
 
 ## My process
