@@ -34,7 +34,7 @@ Reset button is disabled until at least one value is entered.
 
 ### Links
 
-- [FEM Solution](...)
+- [FEM Solution](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX/hub/tip-calculator-app-with-hidden-radio-buttons-RAMyBR33ku)
 - [Live Site URL](https://je-jo.github.io/tip-calculator-app/)
 
 ## My process
