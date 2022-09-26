@@ -18,22 +18,41 @@ function updateBillValue(e) {
 }
 
 const inputPercent = [...document.querySelectorAll('input[name="percentage"]')];
+const customNumber = document.querySelector("#custom-number");
 for (let i = 0; i < inputPercent.length; i++) {
     inputPercent[i].addEventListener("input", (e) => {
-        percent = e.currentTarget.value / 100;
-        console.log(percent)
+        percent = e.target.value / 100;
+        removeActive();
+        e.target.parentNode.classList.add("active");
+        if (e.target.checked) { //empty custom value if button is checked
+            customNumber.value = "";
+        }
         updateDisplay();
     });
 }
 
 const inputPeople = document.getElementById("people");
+const errorMessage = document.getElementById("error")
 inputPeople.addEventListener("input", updateNumberOfPersons);
 function updateNumberOfPersons(e) {
+    if (e.target.value < 1) {
+        errorMessage.textContent = "Can't be zero";
+        return
+    }
     numberOfPersons = e.target.value;
+    errorMessage.textContent = "";
     updateDisplay();
 }
 
 //helper functions
+
+// // remove active class from radio buttons labels
+
+function removeActive() {
+    for (let i = 0; i < inputPercent.length; i++) {
+        inputPercent[i].parentNode.classList.remove("active");
+    }
+}
 
 function formatPrice(num) {
     return num.toLocaleString("en-US", {
@@ -46,6 +65,7 @@ function formatPrice(num) {
 
 const displayTip = document.getElementById("tip");
 const displayTotalBill = document.getElementById("total-bill");
+
 function updateDisplay() {
     displayTip.textContent = formatPrice(calculateIndividualTip());
     displayTotalBill.textContent = formatPrice(calculateTotalBillPerPerson());
@@ -65,6 +85,7 @@ function clearAll() {
     numberOfPersons = 1;
     form.reset();
     buttonClear.setAttribute("disabled", true);
+    removeActive();
     updateDisplay();
 }
 buttonClear.addEventListener("click", clearAll);

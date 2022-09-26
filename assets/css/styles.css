@@ -89,7 +89,7 @@ header {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    padding: 2vw;
+    padding: 9vw;
 }
 
 header>img {
@@ -130,9 +130,9 @@ footer {
 .container--grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-col-width)), 1fr));
-    padding: 2em;
+    padding: 2em 1.5em;
     gap: 3em;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     background-color: var(--clr-white);
     border-radius: var(--border-radius);
 }
@@ -181,6 +181,11 @@ a:hover {
     font-size: min(max(2rem, 3.5vw), var(--fs-xxl));
 }
 
+#error {
+    text-align: right;
+    color: hsl(11, 67%, 62%);
+}
+
 /*input*/
 
 input[type="number"] {
@@ -209,6 +214,11 @@ input[type="number"] {
 
 input::placeholder {
     color: var(--clr-grayish-cyan);
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
 }
 
 fieldset {
@@ -253,7 +263,8 @@ input[type="radio"] {
     background-color: var(--clr-very-light-grayish-cyan);
 }
 
-.btn:hover {
+.btn:hover,
+.active {
     background-color: var(--clr-strong-cyan-hover);
     border: 2px solid var(--clr-strong-cyan-hover);
     color: var(--clr-very-dark-cyan);
