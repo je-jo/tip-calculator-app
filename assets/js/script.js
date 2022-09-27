@@ -84,7 +84,7 @@ function clearAll() {
     percent = 0;
     numberOfPersons = 1;
     form.reset();
-    buttonClear.setAttribute("disabled");
+    buttonClear.setAttribute("disabled", "");
     removeActive();
     updateDisplay();
 }
